@@ -1,19 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <div>
+    <p>账号<input type="text" placeholder="请输入账号"></p>
   </div>
+  <div>
+    <p>密码<input type="text" placeholder="请输入密码"></p>
+  </div>
+  <button size="mini" type="primary" @click="buttonClick">登录</button>
+  </div> 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  data () {
+
+  },
+
+} 
 </script>
 
 <style>
