@@ -1,34 +1,63 @@
 <template>
 <div>
-  <div>
-    <p>账号<input type="text" placeholder="请输入账号"></p>
-  </div>
-  <div>
-    <p>密码<input type="text" placeholder="请输入密码"></p>
-  </div>
-  <button size="mini" type="primary" @click="buttonClick">登录</button>
-  </div> 
+  <a-checkbox @change="changeTheme" /> Change Theme
+  <br />
+  <br />
+  <a-menu
+    style="width: 256px"
+    :defaultSelectedKeys="['1']"
+    :defaultOpenKeys="['sub1']"
+    mode="inline"
+    :theme="theme"
+    :selectedKeys="[current]"
+    @click="handleClick"
+  >
+    <a-menu-item key="1">
+      <a-icon type="mail" />
+      Navigation One
+    </a-menu-item>
+    <a-menu-item key="2">
+      <a-icon type="calendar" />
+      Navigation Two
+    </a-menu-item>
+    <a-sub-menu key="sub1">
+      <span slot="title"><a-icon type="appstore" /><span>Navigation Three</span></span>
+      <a-menu-item key="3">Option 3</a-menu-item>
+      <a-menu-item key="4">Option 4</a-menu-item>
+      <a-sub-menu key="sub1-2" title="Submenu">
+        <a-menu-item key="5">Option 5</a-menu-item>
+        <a-menu-item key="6">Option 6</a-menu-item>
+      </a-sub-menu>
+    </a-sub-menu>
+    <a-sub-menu key="sub2">
+      <span slot="title"><a-icon type="setting" /><span>Navigation Four</span></span>
+      <a-menu-item key="7">Option 7</a-menu-item>
+      <a-menu-item key="8">Option 8</a-menu-item>
+      <a-menu-item key="9">Option 9</a-menu-item>
+      <a-menu-item key="10">Option 10</a-menu-item>
+    </a-sub-menu>
+  </a-menu>
+</div>
 </template>
-
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-
+import Menu from 'ant-design-vue/lib/menu';
+import 'ant-design-vue/lib/menu/style';
 export default {
+ 
   data () {
-
+    return {
+      current: '1',
+      theme: 'dark',
+    }
   },
-
-} 
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  methods: {
+    handleClick (e) {
+      console.log('click ', e)
+      this.current = e.key
+    },
+    changeTheme ({ target }) {
+      this.theme = target.checked ? 'light' : 'dark'
+    },
+  },
 }
-</style>
+</script>

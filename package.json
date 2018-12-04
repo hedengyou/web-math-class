@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ant-design-vue": "^1.1.9",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -39,5 +42,17 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedengyou/web-math-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hedengyou/web-math-class/issues"
+  },
+  "homepage": "https://github.com/hedengyou/web-math-class#readme"
 }
